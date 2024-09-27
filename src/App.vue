@@ -1,21 +1,18 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <Transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </Transition>
-  </router-view>
+  <div class="app">
+    <FolderListArea />
+    <EditorArea />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import EditorArea from './components/EditorArea.vue';
+import FolderListArea from './components/FolderListArea.vue';
+</script>
 
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.2s ease;
-}
-
-.fade-enter-from,
-.fade-leave-active {
-  opacity: 0;
+<style scoped lang="scss">
+.app {
+  display: flex;
+  height: 100vh;
 }
 </style>
